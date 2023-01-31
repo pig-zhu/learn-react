@@ -1,0 +1,36 @@
+.Square {
+    h2 {
+        background-color: antiquewhite;
+    }
+    .box {
+        display: flex;
+        justify-content: center;
+    }
+    .scene {
+        width: 300px;
+        height: 300px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed;
+        box-sizing: content-box;
+        td {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: 700;
+            user-select: none;
+        }
+    }
+    .detail {
+        width: 200px;
+        margin-left: 25px;
+        .reset {
+            margin-left: 10px;
+        }
+        .detail-item {
+            margin: 5px 0;
+        }
+    }
+}
