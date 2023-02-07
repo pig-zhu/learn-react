@@ -1,0 +1,39 @@
+@import '../common/index.scss';
+
+.App {
+	display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.App-header {
+	font-size: Font-Size(12px);
+    min-height: 48px;
+    padding: 0 24px;
+    .left {
+        margin-right: 10px;
+        .img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
+        span {
+            background: linear-gradient(90deg, #6c5a34, #efd574);
+            -webkit-text-fill-color: white;
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 4px transparent;
+            font-size: Font-Size(18px);
+            margin-left: 8px;
+        }
+    }
+    .right {
+        flex: 1;
+        .route-item {
+            margin: 0 5px;
+        }
+    }
+}
+.App-body {
+	flex: 1;
+    background-color: pink;
+    overflow-y: auto;
+}

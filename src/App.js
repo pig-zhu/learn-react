@@ -3,7 +3,6 @@ import './App.css';
 import Clock from './components/Clock';
 import Calculator from './components/Calculator';
 import SplitLine from './components/SplitLine'
-import Square from './Square/Square'
 
 function FancyBorder(props) {
     return (
