@@ -1,4 +1,5 @@
 .Square {
+    text-align: center;
     h2 {
         background-color: antiquewhite;
     }
@@ -31,6 +32,16 @@
         }
         .detail-item {
             margin: 5px 0;
+        }
+    }
+}
+
+@media screen and (max-device-width: 575px) {
+    .box {
+        flex-direction: column;
+        align-items: center;
+        .scene {
+            margin-bottom: 5px;
         }
     }
 }

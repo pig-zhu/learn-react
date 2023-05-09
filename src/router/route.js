@@ -3,6 +3,7 @@ import Calculator from '../components/Calculator'
 import Clock from '../components/Clock'
 import Square from '../components/Square/Square'
 import NotFound from '../components/notfound'
+import Sheep from '../components/Sheep/index'
 const routes = [
     {
         name: '首页',
@@ -25,8 +26,14 @@ const routes = [
         element: <Square />
     },
     {
+        name: '羊了个兔',
+        path: '/sheep',
+        element: <Sheep />
+    },
+    {
         name: '404',
         path: '/404',
+        hideden: true,
         element: <NotFound />
     }
 ]
