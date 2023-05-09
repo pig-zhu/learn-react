@@ -1,5 +1,4 @@
 import React from 'react'
-import {CSSTransition} from 'react-transition-group'
 import './index.scss'
 const Mode = {
     Start: 'start',
