@@ -4,6 +4,7 @@ import Clock from '../components/Clock'
 import Square from '../components/Square/Square'
 import NotFound from '../components/notfound'
 import Sheep from '../components/Sheep/index'
+let base_url = process.env.NODE_ENV === 'product' ? process.env.PUBLIC_URL : ''
 const routes = [
     {
         name: '首页',
@@ -37,4 +38,7 @@ const routes = [
         element: <NotFound />
     }
 ]
+routes.forEach(el => {
+    el.path = base_url + el.path
+})
 export default routes
