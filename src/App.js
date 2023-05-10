@@ -32,7 +32,6 @@ function App() {
                         Thank you for visiting our spacecraft!
                     </p>
                 </FancyBorder>
-                <Square />
             </div>
         </div>
     );
