@@ -87,9 +87,9 @@ export default class Square extends React.Component {
             // 被取出的等待区的卡牌
             saveList: [],
             option: {
-                x: 6,
+                x: 4,
                 y: 4,
-                z: 8,
+                z: 3,
                 cardRandom: 0.2,
                 maxCardType: 11,
             },
@@ -450,8 +450,21 @@ export default class Square extends React.Component {
             mode: mode,
         })
     }
-    rePlay() {
-        this.stateGame()
+    rePlay(_this, win) {
+        console.log(win, '111');
+        let { option } = this.state
+        if(win) {
+            if(option.x <= 8 && option.y <= 8) {
+                option.x++
+                option.y++
+            }
+            option.z++
+        }
+        this.setState({
+            option: option
+        }, () =>{
+            this.stateGame()
+        })
     }
     render() {
         const { mode, cardItemList, penddingList, clearList, saveList } = this.state
@@ -543,7 +556,7 @@ export default class Square extends React.Component {
                             </div>
                         </>
                     ) : mode === Mode.Win ? (
-                        <div>你赢了，真厉害！</div>
+                        <div>你赢了，真厉害！<button onClick={this.rePlay.bind(this, true)}>再来一局</button></div>
                     ) : (
                         <div>你输了， 加油哦！<button onClick={this.rePlay.bind(this)}>再来一次</button></div>
                     )}
