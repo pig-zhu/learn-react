@@ -21,6 +21,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:  # 自定义环境变量
           branch: push
-          folder: dist
+          folder: build
           repository-name: pig-zhu/learn-react # 这是我的 github page 仓库
           target-folder: /
