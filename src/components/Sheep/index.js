@@ -294,8 +294,9 @@ export default class Square extends React.Component {
             this.setState({
                 rand: false,
                 cardItemList: cardItemList,
+            }, () => {
+                this.calcCover()
             })
-            this.calcCover()
         }
     }
     // 计算卡牌之间的层级
@@ -341,7 +342,6 @@ export default class Square extends React.Component {
         cardItemList = cardItemList
             .slice(0, index)
             .concat(cardItemList.slice(index + 1))
-        this.calcCover()
         calcValueList[item.val]++
         item.setStyle({
             top: '165%',
@@ -355,6 +355,8 @@ export default class Square extends React.Component {
             penddingList: penddingList,
             cardItemList: cardItemList,
             calcValueList: calcValueList
+        }, () => {
+            this.calcCover()
         })
     }
     // 取出三个卡牌
@@ -451,7 +453,6 @@ export default class Square extends React.Component {
         })
     }
     rePlay(_this, win) {
-        console.log(win, '111');
         let { option } = this.state
         if(win) {
             if(option.x <= 8 && option.y <= 8) {
@@ -556,7 +557,7 @@ export default class Square extends React.Component {
                             </div>
                         </>
                     ) : mode === Mode.Win ? (
-                        <div>你赢了，真厉害！<button onClick={this.rePlay.bind(this, true)}>再来一局</button></div>
+                        <div>你赢了，真厉害！<button onClick={this.rePlay.bind(this, true)}>再来一局(难度升级！)</button></div>
                     ) : (
                         <div>你输了， 加油哦！<button onClick={this.rePlay.bind(this)}>再来一次</button></div>
                     )}
